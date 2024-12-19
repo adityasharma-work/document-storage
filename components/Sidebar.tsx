@@ -16,21 +16,24 @@ const Sidebar = ({ fullName, avatar, email }: Props) => {
   const pathName = usePathname();
   return (
     <aside className="sidebar">
-      <Link href={"/"}>
-        <Image
+      <Link href={"/"} className="flex gap-4 items-center">
+        {/* <Image
           src="/assets/icons/logo-full-brand.svg"
           alt="logo"
           width={160}
           height={50}
           className="hidden h-auto lg:block"
-        />
+        /> */}
         <Image
           src="/assets/icons/logo-brand.svg"
           alt="logo"
           width={52}
           height={52}
-          className="lg:hidden"
+          className=""
         />
+        <div className="text-brand font-medium text-2xl hidden lg:block ">
+          DocStore
+        </div>
       </Link>
 
       <nav className="sidebar-nav">
@@ -77,7 +80,7 @@ const Sidebar = ({ fullName, avatar, email }: Props) => {
         />
         <div className="hidden lg:block">
           <p className="subtitle-2 capitalize">{fullName}</p>
-            <p className="caption">{email}</p>
+          <p className="caption text-ellipsis truncate">{email}</p>
         </div>
       </div>
     </aside>

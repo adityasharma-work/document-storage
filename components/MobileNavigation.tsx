@@ -3,7 +3,7 @@ import {
   Sheet,
   SheetContent,
   SheetTitle,
-  SheetTrigger
+  SheetTrigger,
 } from "@/components/ui/sheet";
 import { signOutUser } from "@/lib/actions/user.action";
 import { navItems } from "@/lib/constants";
@@ -35,13 +35,25 @@ const MobileNavigation = ({
   const pathName = usePathname();
   return (
     <header className="mobile-header">
-      <Image
+      {/* <Image
         src="/assets/icons/logo-full-brand.svg"
         alt="logo"
         width={120}
         height={52}
         className="h-auto"
-      />
+      /> */}
+      <div className="flex items-center gap-3">
+        <Image
+          src="/assets/icons/logo-brand.svg"
+          alt="logo"
+          width={40}
+          height={40}
+          className=""
+        />
+        <div className="text-brand font-medium text-xl">
+          DocStore
+        </div>
+      </div>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger>
           <Image
@@ -96,8 +108,8 @@ const MobileNavigation = ({
             </ul>
           </nav>
           <Separator className="my-5 bg-light-200/20" />
-          <div className="flex flex-col justify-between gap-5 pb-5">
-            <FileUploader ownerId={ownerId} accountId={accountId} />
+          <div className="flex flex-col justify-between gap-5 pb-5 border-2 border-emerald-500">
+            <FileUploader ownerId={ownerId} accountId={accountId} className={"w-full"} />
             <Button
               type="submit"
               className="mobile-sign-out-button"
